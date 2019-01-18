@@ -24,6 +24,5 @@ public:
     void gotMessage(ofMessage msg);
 
     itg::ofxStateMachine<SharedData> stateMachine; //アドオンをインスタンス化
-    ofTrueTypeFont font; //フォント用
 
 };

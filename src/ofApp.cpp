@@ -19,8 +19,8 @@ void ofApp::setup(){
     jsettings.addRange(ofUnicode::Katakana);//カタカナ
     //jsettings.addRange(ofUnicode::MiscSymbolsAndPictographs);//絵文字など
     //jsettings.addRange(ofUnicode::Emoticons);//エモーティコン
-    font.load(jsettings); // 設定をロード
-    font.setLetterSpacing(1.2);//文字間 デフォルトは1.0 文字間をより開ける場合は1.0を超える値を指定する
+    stateMachine.getSharedData().font.load(jsettings); // 設定をロード
+    stateMachine.getSharedData().font.setLetterSpacing(1.2);//文字間 デフォルトは1.0 文字間をより開ける場合は1.0を超える値を指定する
 
     stateMachine.addState<Top>();
     stateMachine.addState<Intake>();

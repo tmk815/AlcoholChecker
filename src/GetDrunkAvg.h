@@ -11,7 +11,10 @@ public:
     void setup();
     void update();
     void draw();
+    void mousePressed(int x, int y, int button);
 
     string getName(); //状態の名前を返す関数
 
+private:
+    ofImage getDrunkAvg_image; //全体画像
 };
