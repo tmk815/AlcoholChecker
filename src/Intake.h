@@ -23,4 +23,5 @@ private:
     ofTrueTypeFont font; //フォント用
     ofxXmlSettings alcohol; //XMLの設定用
     double alcholAmount;
+    ofSoundPlayer submit;
 };
