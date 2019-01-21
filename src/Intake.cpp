@@ -2,15 +2,16 @@
 
 void Intake::setup(){
     intake_image.load("image/Intake.png");
+    submit.load("decision7.mp3");
 
     ofSetVerticalSync(true);
 
-    gui.setup(); // most of the time you don't need a name
+    gui.setup("Amount/Percent","panel",200,300); // most of the time you don't need a name
     gui.setSize(700, 50);
     gui.setDefaultWidth(700);
-    gui.setDefaultHeight(40);
+    gui.setDefaultHeight(60);
 
-    gui.add(alcoholAmount_slider.setup("ｍｌ", 350, 0, 1000));
+    gui.add(alcoholAmount_slider.setup("ml", 350, 0, 1000));
     gui.add(percent.setup("%",5,0,100));
 }
 
@@ -41,6 +42,7 @@ void Intake::mousePressed(int x, int y, int button){
         alcholAmount += alcoholAmount_slider*(static_cast<double>(percent)/100) * 0.792;
         alcohol.setValue("data:alcholAmount",alcholAmount);
         alcohol.saveFile("alcohol.xml");
+        submit.play();
     }
 }
 
