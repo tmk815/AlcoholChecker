@@ -20,6 +20,20 @@ void Top::draw(){
     ofSetColor(0, 0, 0); //色を黒に変更
     getSharedData().font.drawString(std::to_string(bloodAlcoholConcentration)+"mg/ml",350,720);
     ofSetColor(255, 255, 255); //色の初期化
+
+    ofSetColor(255, 0, 0); //色を赤に変更
+    if(bloodAlcoholConcentration >= 0.5){
+        getSharedData().font.drawString("規則順守ができない",350,500);
+    }else if(bloodAlcoholConcentration >= 0.4){
+        getSharedData().font.drawString("視線の固定が困難",350,500);
+    }else if(bloodAlcoholConcentration >= 0.3){
+        getSharedData().font.drawString("ハンドル操作が困難",350,500);
+    }else if(bloodAlcoholConcentration >= 0.2){
+        getSharedData().font.drawString("反応時間の低下",350,500);
+    }else if(bloodAlcoholConcentration >= 0.05){
+        getSharedData().font.drawString("注意の集中が困難",350,500);
+    }
+    ofSetColor(255, 255, 255); //色の初期化
 }
 
 void Top::mousePressed(int x, int y, int button){
