@@ -20,6 +20,9 @@ public:
 private:
     ofImage top_image; //全体画像
     ofxXmlSettings alcohol; //XMLの設定用
+    ofxXmlSettings result; //XMLの設定用
     double bloodAlcoholConcentration;
     double alcholAmount;
+    string time;
+    int deadDrunk;
 };
