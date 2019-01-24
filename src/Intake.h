@@ -24,4 +24,5 @@ private:
     ofxXmlSettings alcohol; //XMLの設定用
     double alcholAmount;
     ofSoundPlayer submit;
+    int d; //日付
 };

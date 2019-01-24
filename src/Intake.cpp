@@ -38,6 +38,12 @@ void Intake::mousePressed(int x, int y, int button){
 
     if(x>=250 && x<= 800 && y>=720 && y <=1020){
         alcohol.loadFile("alcohol.xml");
+        d = alcohol.getValue("data:day", 0); //日付
+        if (ofGetDay() != d) {
+            alcohol.setValue("data:day", ofGetDay()); //dayに書き込む
+            alcohol.setValue("data:alcholAmount", 0.0); //daypointsに書き込む
+            alcohol.saveFile("alcohol.xml"); //保存
+        }
         alcholAmount = alcohol.getValue("data:alcholAmount", 0.0);
         alcholAmount += alcoholAmount_slider*(static_cast<double>(percent)/100) * 0.792;
         alcohol.setValue("data:alcholAmount",alcholAmount);
