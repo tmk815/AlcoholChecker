@@ -6,7 +6,7 @@ void Intake::setup(){
 
     ofSetVerticalSync(true);
 
-    gui.setup("Amount/Percent","panel",200,300); // most of the time you don't need a name
+    gui.setup("Amount/Percent","panel",200,300); //タイトル、名前、x,y
     gui.setSize(700, 50);
     gui.setDefaultWidth(700);
     gui.setDefaultHeight(60);
@@ -25,6 +25,10 @@ void Intake::update(){
 void Intake::draw(){
     intake_image.draw(0,0, 500*2,720*2);
     gui.draw();
+    ofSetColor(0, 0, 0); //色を黒に変更
+    getSharedData().font.drawString("飲んだ量",0,350);
+    getSharedData().font.drawString("%",100,430);
+    ofSetColor(255, 255, 255); //色を白に変更
 }
 
 void Intake::mousePressed(int x, int y, int button){
