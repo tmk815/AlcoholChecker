@@ -43,7 +43,7 @@ void GetDrunkAvg::draw(){
 
     ofSetColor(0,0,0);
     for(int i=0;i<time;i++){
-        getSharedData().font.drawString(bloodAlcoholConcentration[i], 110, 30 + (i * 100)); // 文字とポジションを指定して描画
+        getSharedData().font.drawString(year[i]+"/"+month[i]+"/"+day[i]+"  アルコール濃度"+bloodAlcoholConcentration[i], 110, 30 + (i * 100)); // 文字とポジションを指定して描画
     }
     ofSetColor(255,255,255);
 }
